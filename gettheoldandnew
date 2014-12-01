@@ -7,8 +7,6 @@ private List<Integer[]> changtoiss(Integer[] oldss,Integer[] newss){
 		List<Integer> willadd=new ArrayList();
         for(int i=0;i<oldss.length;i++){
         	for(int j=0;j<newss.length;j++){
-        		System.out.println("702"+newss[j]);
-        		System.out.println("703"+oldss[i]);
         		if(newss[j].equals(oldss[i])) {x=1;}
         	}
         	if(x==0){
@@ -18,12 +16,9 @@ private List<Integer[]> changtoiss(Integer[] oldss,Integer[] newss){
         }
         for(int i=0;i<newss.length;i++){
         	for(int j=0;j<oldss.length;j++){
-        		System.out.println("713"+newss[i]);
-        		System.out.println("714"+oldss[j]);
         		if(newss[i].equals(oldss[j])){ x=1;}
         	}
         	if(x==0){
-        		System.out.println("701"+newss[i]);
         		willadd.add(newss[i]);
         	}else x=0;
         }
