@@ -10,7 +10,6 @@ private List<Integer[]> changtoiss(Integer[] oldss,Integer[] newss){
         		if(newss[j].equals(oldss[i])) {x=1;}
         	}
         	if(x==0){
-        		System.out.println("692"+oldss[i]);
         		willdel.add(oldss[i]);
         	}else x=0;
         }
