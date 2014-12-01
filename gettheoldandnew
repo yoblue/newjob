@@ -1,0 +1,53 @@
+private List<Integer[]> changtoiss(Integer[] oldss,Integer[] newss){
+		List<Integer[]> lists=new ArrayList();
+		Arrays.sort(oldss);
+		Arrays.sort(newss);
+		int x=0;
+		List<Integer> willdel=new ArrayList();
+		List<Integer> willadd=new ArrayList();
+        for(int i=0;i<oldss.length;i++){
+        	for(int j=0;j<newss.length;j++){
+        		System.out.println("702"+newss[j]);
+        		System.out.println("703"+oldss[i]);
+        		if(newss[j].equals(oldss[i])) {x=1;}
+        	}
+        	if(x==0){
+        		System.out.println("692"+oldss[i]);
+        		willdel.add(oldss[i]);
+        	}else x=0;
+        }
+        for(int i=0;i<newss.length;i++){
+        	for(int j=0;j<oldss.length;j++){
+        		System.out.println("713"+newss[i]);
+        		System.out.println("714"+oldss[j]);
+        		if(newss[i].equals(oldss[j])){ x=1;}
+        	}
+        	if(x==0){
+        		System.out.println("701"+newss[i]);
+        		willadd.add(newss[i]);
+        	}else x=0;
+        }
+        if(willadd.size()!=0){
+        	Object[] os=willadd.toArray();
+        	Integer[] as=new Integer[os.length];
+        	Integer newi;
+        	for(int i=0;i<os.length;i++){
+        		newi=(Integer)os[i];
+        		as[i]=newi;
+        	}
+        	lists.add(as);
+        }else lists.add(null);
+        
+        if(willdel.size()!=0){
+        	Object[] ds=willdel.toArray();
+        	Integer[] delarr=new Integer[ds.length];
+        	Integer oldi;
+        	for(int i=0;i<ds.length;i++){
+        		oldi=(Integer)ds[i];
+        		delarr[i]=oldi;
+        	}
+        	lists.add(delarr);
+        }else lists.add(null);
+        
+		return lists;
+	}
